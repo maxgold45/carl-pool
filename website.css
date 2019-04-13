@@ -1,9 +1,9 @@
 .logo {
-  min-height: 30%;
-  min-width: 99%;
+  min-height: 20%;
+  width: 100%;
   background: #977666;
   background-image: url(CarlsPool.png);
-  background-size: cover;
+  background-size: fill;
   background-repeat: no-repeat;
   background-position: center;
 }
