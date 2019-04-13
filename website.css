@@ -1,0 +1,14 @@
+body {
+    font-family: Tahoma, Geneva, sans-serif;
+    margin: 20px;
+}
+
+#buttons {
+    width: 100%;
+    height: 30px;
+}
+
+#rider_button,#driver_button {
+    width: 30%;
+    height: 100%;
+}
