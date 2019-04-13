@@ -2,4 +2,6 @@
   background: #977666;
   background-image: url(CarlsPool.png);
   background-size: fill;
+  background-repeat: no-repeat;
+  background-position: center;
 }
