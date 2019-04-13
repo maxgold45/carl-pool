@@ -3,7 +3,7 @@
   min-width: 40%;
   background: #977666;
   background-image: url(CarlsPool.png);
-  background-size: fill;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
