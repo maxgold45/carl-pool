@@ -1,7 +1,7 @@
 .logo {
-  background: black;
-  height: 200px;
-  width: 400px;
+  background: #977666;
+  height: 20px;
+  width: 40px;
   background-image: url(CarlsPool.png);
   background-size: cover;
 }
