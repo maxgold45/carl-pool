@@ -18,7 +18,17 @@
                 </p>
             </div>
 
-        </div>
+            <div class="row">
+
+              <p id="log2"></p>
+
+              <br>
+              <br>
+
+              <p id="log"></p>
+
+            </div>
+
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -27,7 +37,7 @@
 
     <!--Tabletop-->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
-    <script type='text/javascript'>    
+    <script type='text/javascript'>
       var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1Z-3_e5iW_rAvRVdXd3uhRKxKpAuGDZaCmwr9MkjXnlI/edit?usp=sharing';
 
       function init() {
@@ -39,6 +49,26 @@
       function showInfo(data, tabletop) {
         alert('Successfully processed!')
         console.log(data);
+      }
+
+
+      (function () {
+          var old = console.log;
+          var logger = document.getElementById('log');
+          console.log = function (message) {
+              if (typeof message == 'object') {
+                  logger.innerHTML += (JSON && JSON.stringify ? JSON.stringify(message) : message) + '<br />';
+              } else {
+                  logger.innerHTML += message + '<br />';
+              }
+          }
+      })();
+
+      function thing() {
+        var array = console.log;
+        var logger = document.getElementById('log2');
+        console.table(Array[0]);
+        logger.innerHTML += JSON.stringify;
       }
 
       window.addEventListener('DOMContentLoaded', init)
