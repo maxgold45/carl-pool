@@ -1,4 +1,6 @@
 .logo {
+  min-height: 20%;
+  min-width: 40%;
   background: #977666;
   background-image: url(CarlsPool.png);
   background-size: fill;
