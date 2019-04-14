@@ -22,10 +22,30 @@
                 }
                 </style>
             </div>
+            <div class = "row; text-center">
                 <p>
                     Sign up for the email list <a href="https://groups.google.com/forum/#!forum/carlspool/join">here.</a>
                 </p>
             </div>
+            <div class = "row; text-center">
+                <table class="table table-hover table-dark" id="table">
+                  <tr>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Pickup</th>
+                    <th>Destination</th>
+                    <th>Passengers</th>
+                    <th>Price</th>
+                    <th>Payment Method</th>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Additional Info</th>
+
+                  </tr>
+                </table>
+            </div>
+        </div>
 
             <div class="row">
 
@@ -44,8 +64,92 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
+
+    <script>
+
+
+    fetch("https://spreadsheets.google.com/feeds/list/1Z-3_e5iW_rAvRVdXd3uhRKxKpAuGDZaCmwr9MkjXnlI/1/public/values?alt=json")
+     .then(function(response) {
+        return response.json();
+     })
+     .then(function(myJson) {
+       spreadsheet = myJson.feed.entry;
+       //tableData(spreadsheet);
+       makeSpreadsheet(spreadsheet);
+     });
+
+
+
+
+    </script>
+
+    <!--script>
+
+    function tableData(data){
+        alert(data);
+        let columns = Object.keys(data[0]);
+        columns = columns.slice(7);
+        alert(columns);
+        let table = document.querySelector('table');
+        alert(table);
+        let headerRow = document.createElement ('tr');
+        for (let keyName of columns) {
+               let headerCell = document.createElement('th');
+               headerCell.append(document.createTextNode(keyName.slice(4)));
+               headerRow.append(headerCell);
+           };
+        table.append(headerRow);
+
+
+
+    }
+
+
+    </script!-->
+
+    <script>
+     function makeSpreadsheet(spreadsheet){
+        var table = document.getElementById("table");
+
+        
+
+        for (var i = 0; i < spreadsheet.length; i++) {
+            var row = table.insertRow(1);
+
+            var date = row.insertCell(0);
+            var time = row.insertCell(1);
+            var pickup = row.insertCell(2);
+            var destination = row.insertCell(3);
+            var seats = row.insertCell(4);
+            var price = row.insertCell(5);
+            var method = row.insertCell(6);
+            var name = row.insertCell(7);
+            var phone = row.insertCell(8);
+            var email = row.insertCell(9);
+            var info = row.insertCell(10);
+
+            date.innerHTML = spreadsheet[i].gsx$pickupdate.$t;
+            time.innerHTML = spreadsheet[i].gsx$pickuptime.$t;
+            pickup.innerHTML = spreadsheet[i].gsx$pickuplocation.$t;
+            destination.innerHTML = spreadsheet[i].gsx$destination.$t;
+            seats.innerHTML = spreadsheet[i].gsx$howmanypeople.$t;
+            price.innerHTML = spreadsheet[i].gsx$howmuchareyouwillingtopay.$t;
+            method.innerHTML = spreadsheet[i].gsx$howwillyoupay.$t;
+            name.innerHTML = spreadsheet[i].gsx$name.$t;
+            phone.innerHTML = spreadsheet[i].gsx$phone.$t;
+            email.innerHTML = spreadsheet[i].gsx$email.$t;
+            info.innerHTML = spreadsheet[i].gsx$additionalinfo.$t;
+        }
+      }
+        
+
+    </script>
+
+
+
+
     <!--Tabletop-->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
+    <!--script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
     <script type='text/javascript'>
       var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1Z-3_e5iW_rAvRVdXd3uhRKxKpAuGDZaCmwr9MkjXnlI/edit?usp=sharing';
 
@@ -81,8 +185,8 @@
       }
 
       window.addEventListener('DOMContentLoaded', init)
-    </script>
+    </script></script> <!-->
 
-</script>
+
 </body>
 </html>
