@@ -103,33 +103,54 @@
         
 
         for (var i = 0; i < spreadsheet.length; i++) {
-            var row = table.insertRow(1);
 
-            var date = row.insertCell(0);
-            var time = row.insertCell(1);
-            var pickup = row.insertCell(2);
-            var destination = row.insertCell(3);
-            var seats = row.insertCell(4);
-            var price = row.insertCell(5);
-            var method = row.insertCell(6);
-            var name = row.insertCell(7);
-            var phone = row.insertCell(8);
-            var email = row.insertCell(9);
-            var info = row.insertCell(10);
+          // Only show dates after today:
+          var pickupDate = spreadsheet[i].gsx$pickupdate.$t;
+          var splitDate = pickupDate.split("/");
 
-            date.innerHTML = spreadsheet[i].gsx$pickupdate.$t;
-            time.innerHTML = spreadsheet[i].gsx$pickuptime.$t;
-            pickup.innerHTML = spreadsheet[i].gsx$pickuplocation.$t;
-            destination.innerHTML = spreadsheet[i].gsx$destination.$t;
-            seats.innerHTML = spreadsheet[i].gsx$howmanypeople.$t;
-            price.innerHTML = spreadsheet[i].gsx$howmuchareyouwillingtopay.$t;
-            method.innerHTML = spreadsheet[i].gsx$howwillyoupay.$t;
-            name.innerHTML = spreadsheet[i].gsx$name.$t;
-            phone.innerHTML = spreadsheet[i].gsx$phone.$t;
-            email.innerHTML = spreadsheet[i].gsx$emailaddress.$t;
-            info.innerHTML = spreadsheet[i].gsx$additionalinfo.$t;
+          var pickupMonth = parseInt(splitDate[0]) - 1;
+          var pickupDay = parseInt(splitDate[1]);
+          var pickupYear = parseInt(splitDate[2]) + 2000;
+
+          var today = new Date();
+
+          var userDate = new Date(pickupYear, pickupMonth, pickupDay + 1, 0, 0, 0, 0);
+
+          if (userDate < today)
+            continue;
+          
+        
+          
+
+          var row = table.insertRow(1);
+
+          var date = row.insertCell(0);
+          var time = row.insertCell(1);
+          var pickup = row.insertCell(2);
+          var destination = row.insertCell(3);
+          var seats = row.insertCell(4);
+          var price = row.insertCell(5);
+          var method = row.insertCell(6);
+          var name = row.insertCell(7);
+          var phone = row.insertCell(8);
+          var email = row.insertCell(9);
+          var info = row.insertCell(10);
+
+          date.innerHTML = spreadsheet[i].gsx$pickupdate.$t;
+          time.innerHTML = spreadsheet[i].gsx$pickuptime.$t;
+          pickup.innerHTML = spreadsheet[i].gsx$pickuplocation.$t;
+          destination.innerHTML = spreadsheet[i].gsx$destination.$t;
+          seats.innerHTML = spreadsheet[i].gsx$howmanypeople.$t;
+          price.innerHTML = spreadsheet[i].gsx$howmuchareyouwillingtopay.$t;
+          method.innerHTML = spreadsheet[i].gsx$howwillyoupay.$t;
+          name.innerHTML = spreadsheet[i].gsx$name.$t;
+          phone.innerHTML = spreadsheet[i].gsx$phone.$t;
+          email.innerHTML = spreadsheet[i].gsx$emailaddress.$t;
+          info.innerHTML = spreadsheet[i].gsx$additionalinfo.$t;
+            }
         }
-      }
+      
+
         
 
     </script>
