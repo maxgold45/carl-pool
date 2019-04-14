@@ -1,3 +1,7 @@
 .table-blue {
   background-color: 0b5091; 
 }
+
+.table-blue th {
+  background-color: black;
+}
