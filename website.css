@@ -1,9 +1,3 @@
-.logo {
-  min-height: 20%;
-  min-width: 25%;
-  background: #f5c13f;
-  background-image: url(carl.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+.table-dark {
+  background: blue; 
 }
