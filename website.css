@@ -6,17 +6,4 @@
   background-color: black;
 }
 
-.invisible {
-  opacity: 0;
-  height: 10px;
-  width: 10px;
-}
-
-.stevie {
-  height: 100%;
-  width: 100%;
-  background-image: url(Stevie p in a taxi.png);  
-  background-size: cover;
-}
-
 th:not(:last-child), td:not(:last-child) { border-right: 1px solid #000; }
