@@ -1,0 +1,24 @@
+~$10 Unity course on Full Stack dev
+
+Java - grails.org (framework) (Model-domain View-frontend Controller System (server,frontend,backend))
+	Springboot security frameworks (Spring (Security)- most websites use)
+
+	Choose database (dialect) - Postgres, Mongo, sql, etc.
+
+MVC:
+	Controller:
+		Methods
+		URI
+	
+	Model/Domain: Actual Database
+		Uses a model
+
+	View: GSP (Grail Server Page)- Standard HTML attached to CSS
+
+		<g:link>
+
+Gradle/Maven:
+	pip for Java
+	compile "org....plugin"
+	Security, Search Engine, HTTP Requests, Pipeline (Javascript/CSS in one file)
+Hibernate
