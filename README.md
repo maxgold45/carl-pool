@@ -1,4 +1,4 @@
-# [CarlsPool](http://carlspool.me)
+# [CarlsPool](https://maxgold45.github.io/carls-pool/)
 
 ### Idea Creation
 
